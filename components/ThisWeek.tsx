@@ -1,4 +1,4 @@
-import { site, DAY_NAMES, type WeekEvent } from "@/content/site";
+import { site, DAY_NAMES, instagramLabel, type WeekEvent } from "@/content/site";
 import SectionHeading from "./SectionHeading";
 import TonightBadge from "./TonightBadge";
 
@@ -27,9 +27,10 @@ export default function ThisWeek() {
           ))}
         </ul>
         <p data-reveal className="mt-12 text-center text-sm text-cream-300">
-          Lineups and specials change. Check{" "}
+          {site.preview ? "Sample nights and specials shown. " : "Lineups and specials change. "}
+          Check{" "}
           <a href={site.instagram.url} target="_blank" rel="noopener noreferrer" className="font-semibold text-brass-300 underline-offset-4 hover:underline">
-            {site.instagram.handle}
+            {instagramLabel()}
           </a>{" "}
           for night-of updates.
         </p>

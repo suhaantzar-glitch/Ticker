@@ -1,8 +1,8 @@
 /**
  * All editable site content lives here.
  *
- * Anything marked [CONFIRM] is a best guess that should be checked with
- * the bar before going live. Search this file for "CONFIRM" to find them.
+ * Anything marked [CONFIRM] is a best guess or sample content that should be
+ * checked with the owner before going live. Search this file for "CONFIRM".
  */
 
 export type Weekday = 0 | 1 | 2 | 3 | 4 | 5 | 6; // 0 = Sunday
@@ -38,11 +38,16 @@ export const site = {
   tagline: "Canton's late-night tradition",
   description:
     "The Tick Tock Pub is Canton, NY's late-night college bar and dance floor: red booths, two bars, a DJ, and the night everybody ends up at.",
+  /** Fallback only; on Vercel the deployment URL is used automatically (see lib/siteUrl.ts). */
   url: "https://ticktockpub.vercel.app", // [CONFIRM] swap for the real domain
   timezone: "America/New_York",
 
   address: {
-    street: "11 Hodskin St", // [CONFIRM] listings show both 9 and 11 Hodskin St
+    // The property is 9–11 Hodskin St (per 2024 local news coverage of the sale);
+    // listings use 9 or 11 interchangeably.
+    street: "9–11 Hodskin St",
+    /** Single street number used for map searches and directions */
+    mapStreet: "11 Hodskin St",
     city: "Canton",
     region: "NY",
     postalCode: "13617",
@@ -50,9 +55,17 @@ export const site = {
   },
 
   instagram: {
-    handle: "@theticktockpub", // [CONFIRM] placeholder handle
-    url: "https://www.instagram.com/theticktockpub/", // [CONFIRM]
+    // [CONFIRM] No official account found yet. Set e.g. "@handle" and the
+    // profile URL; while handle is null the site just says "Instagram".
+    handle: null as string | null,
+    url: "https://www.instagram.com/",
   },
+
+  /**
+   * Concept-preview mode: labels sample events, specials and photos as such.
+   * Set to false once real content is in.
+   */
+  preview: true,
 
   /** Thursday–Saturday, 10pm–2am */
   openNights: [
@@ -61,7 +74,7 @@ export const site = {
     { day: 6, open: "22:00", close: "02:00" },
   ] satisfies OpenNight[] as OpenNight[],
 
-  /** Placeholder events. Edit freely; one card renders per entry. */
+  /** [CONFIRM] Sample events and specials for the concept. One card renders per entry. */
   thisWeek: [
     {
       day: 4,
@@ -91,24 +104,26 @@ export const site = {
 
   knowBeforeYouGo: {
     hours: "Thu – Sat · 10pm – 2am",
-    cover: "Cover varies by night, typically $5 – $10. Cash and card at the door.", // [CONFIRM]
+    cover: "Cover varies by night. Check Instagram for the night's details.", // [CONFIRM]
     id: "21+ only. A valid, unexpired government-issued photo ID is required every night. No exceptions, no photocopies.",
-    dress: "Come as you are. Jerseys encouraged on Fridays.",
+    dress: "Come as you are.", // [CONFIRM]
     parking:
-      "Street parking on Hodskin St and Main St, plus nearby municipal lots. Better yet: walk, carpool with a sober driver, or grab a ride home.", // [CONFIRM]
+      "Downtown street parking nearby. Better yet: walk, carpool with a sober driver, or grab a ride home.", // [CONFIRM]
   },
 
   space: {
     heading: "The Space",
     body: [
-      "Oxblood leather booths worn soft by a few thousand Thursdays. Wood floors that have seen every dance move since before you were born. Two bars, so the line is never as bad as it looks.",
-      "Grab a booth up front, then follow the bass to the back, where the DJ runs the floor until last call.",
+      "Everybody calls it the Ticker. Oxblood leather booths worn soft by generations of Thursdays, warm wood floors, and the caricatures, murals and fireplaces that make it unmistakably the Tock.",
+      "Two bars, so the line is never as bad as it looks. Grab a booth up front, then follow the bass to the back, where the DJ runs the floor until last call.",
     ],
     features: [
       { title: "Red Booths", text: "Cherry leather seating, perfect for the pregame recap." },
       { title: "Two Bars", text: "Front bar for catching up, back bar for the dance floor." },
-      { title: "Wood Floors", text: "Warm oak boards under every step." },
+      { title: "Wood Floors", text: "Warm wooden boards under every step." },
       { title: "Dance Floor + DJ", text: "Lights down, volume up, every open night." },
+      { title: "Caricatures & Murals", text: "The walls are part of the legend. They're staying put." },
+      { title: "Fireplaces", text: "Warmth for a North Country winter night." },
     ],
   },
 
@@ -116,7 +131,7 @@ export const site = {
     hero: { src: "/images/hero.jpg", alt: "Low-lit interior of The Tick Tock Pub with red booths and the bar glowing", width: 2400, height: 1500 },
     space: [
       { src: "/images/space-booths.jpg", alt: "Row of deep red leather booths", width: 1200, height: 1500 },
-      { src: "/images/space-front-bar.jpg", alt: "Wood-paneled front bar with brass rail", width: 1600, height: 1100 },
+      { src: "/images/space-front-bar.jpg", alt: "Wood-paneled front bar", width: 1600, height: 1100 },
       { src: "/images/space-floor.jpg", alt: "Warm wooden floorboards under string lights", width: 1600, height: 1100 },
       { src: "/images/space-back-bar.jpg", alt: "Back bar beside the dance floor", width: 1200, height: 1500 },
       { src: "/images/space-dj.jpg", alt: "DJ booth lit up over a packed dance floor", width: 2000, height: 1100 },
@@ -155,5 +170,11 @@ export function fullAddress() {
 }
 
 export function mapsQuery() {
-  return encodeURIComponent(`The Tick Tock Pub, ${fullAddress()}`);
+  const a = site.address;
+  return encodeURIComponent(`Tick Tock, ${a.mapStreet}, ${a.city}, ${a.region} ${a.postalCode}`);
+}
+
+/** How to refer to the Instagram account in copy: the handle if known, else "Instagram". */
+export function instagramLabel() {
+  return site.instagram.handle ?? "Instagram";
 }

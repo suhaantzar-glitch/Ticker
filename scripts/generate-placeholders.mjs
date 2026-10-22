@@ -105,6 +105,22 @@ function svg(name, w, h, paletteKey, kind, label) {
        <text x="${w / 2}" y="${h - fontSize * 0.6}" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" letter-spacing="3" font-size="${Math.round(fontSize * 0.5)}" fill="#f4ead5" opacity="0.4">PHOTO PLACEHOLDER</text>`
     : "";
 
+  // Social share card: wordmark over the scene. Uses the Graduate and Permanent
+  // Marker fonts if installed locally, falling back to a serif.
+  const og =
+    name === "og"
+      ? `<rect width="100%" height="100%" fill="#120a05" opacity="0.45"/>
+  <text x="${w / 2}" y="150" text-anchor="middle" font-family="Graduate, DejaVu Serif, serif" font-size="44" letter-spacing="18" fill="#f0cf83">THE</text>
+  ${[[8, "#120a05"], [4, "#7a1414"], [0, "#fbf6ea"]]
+    .map(([d, fill]) => `<text x="${w / 2 + d}" y="${330 + d}" text-anchor="middle" font-family="Graduate, DejaVu Serif, serif" font-weight="700" font-size="170" fill="${fill}">TICK TOCK</text>`)
+    .join("")}
+  <rect x="${w / 2 - 90}" y="372" width="140" height="56" fill="#7a1414"/>
+  <polygon points="${w / 2 + 50},372 ${w / 2 + 92},400 ${w / 2 + 50},428" fill="#7a1414"/>
+  <text x="${w / 2 - 20}" y="412" text-anchor="middle" font-family="Graduate, DejaVu Serif, serif" font-size="30" letter-spacing="10" fill="#fbf6ea">PUB</text>
+  <text x="${w / 2}" y="510" text-anchor="middle" font-family="Permanent Marker, DejaVu Sans, sans-serif" font-size="46" fill="#f4ead5">Canton's late-night tradition</text>
+  <text x="${w / 2}" y="570" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-weight="700" font-size="22" letter-spacing="6" fill="#d9a441">THU · FRI · SAT · 10PM – 2AM</text>`
+      : "";
+
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">
   <defs>
     <radialGradient id="g" cx="${30 + r() * 40}%" cy="25%" r="90%">
@@ -121,6 +137,7 @@ function svg(name, w, h, paletteKey, kind, label) {
   <g filter="url(#blur)">${parts.join("")}</g>
   <rect width="100%" height="100%" fill="url(#v)"/>
   ${text}
+  ${og}
 </svg>`;
 }
 

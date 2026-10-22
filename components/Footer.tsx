@@ -1,4 +1,4 @@
-import { site, fullAddress } from "@/content/site";
+import { site, fullAddress, instagramLabel } from "@/content/site";
 import { InstagramIcon } from "./icons";
 
 export default function Footer() {
@@ -25,7 +25,7 @@ export default function Footer() {
               className="inline-flex items-center gap-2 text-lg text-cream-50 transition-colors hover:text-brass-300"
             >
               <InstagramIcon className="h-5 w-5" />
-              {site.instagram.handle}
+              {instagramLabel()}
             </a>
           </div>
         </div>
@@ -34,6 +34,7 @@ export default function Footer() {
           <p className="font-semibold text-cream-100">{site.legal.responsibly}</p>
           <p>
             © {year} {site.name}. All rights reserved.
+            {site.preview && <span className="block text-xs text-cream-300/70 md:inline md:pl-2">Concept preview · sample events &amp; photos</span>}
           </p>
         </div>
       </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { site } from "@/content/site";
+import { site, instagramLabel } from "@/content/site";
 import { InstagramIcon } from "./icons";
 import OpenBadge from "./OpenBadge";
 
@@ -54,7 +54,7 @@ export default function Nav() {
             href={site.instagram.url}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`Instagram ${site.instagram.handle}`}
+            aria-label={`Follow on ${instagramLabel()}`}
             className="hidden rounded-full p-2 text-cream-100 transition-colors hover:text-brass-300 sm:block"
           >
             <InstagramIcon className="h-5 w-5" />
@@ -90,7 +90,7 @@ export default function Nav() {
           <li className="mt-2 flex items-center justify-between border-t border-cream-50/10 pt-4">
             <OpenBadge />
             <a href={site.instagram.url} target="_blank" rel="noopener noreferrer" className="text-brass-300">
-              {site.instagram.handle}
+              {instagramLabel()}
             </a>
           </li>
         </ul>

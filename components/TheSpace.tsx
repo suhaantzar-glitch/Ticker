@@ -12,7 +12,7 @@ export default function TheSpace() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
           <div className="lg:sticky lg:top-28 lg:self-start">
-            <SectionHeading eyebrow="Est. Downtown" title={site.space.heading} align="left" />
+            <SectionHeading eyebrow="Inside the Tock" title={site.space.heading} align="left" />
             <div data-reveal className="space-y-5 text-lg leading-relaxed text-cream-200">
               {site.space.body.map((p) => (
                 <p key={p}>{p}</p>

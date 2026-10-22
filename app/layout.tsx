@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Sans, Graduate, Permanent_Marker } from "next/font/google";
-import { site, fullAddress, DAY_NAMES } from "@/content/site";
+import { site, mapsQuery, DAY_NAMES } from "@/content/site";
 import MotionProvider from "@/components/MotionProvider";
+import { siteUrl } from "@/lib/siteUrl";
 import "./globals.css";
 
 const graduate = Graduate({ weight: "400", subsets: ["latin"], variable: "--font-graduate", display: "swap" });
@@ -9,7 +10,7 @@ const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-dm-sans", display
 const marker = Permanent_Marker({ weight: "400", subsets: ["latin"], variable: "--font-marker", display: "swap" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(site.url),
+  metadataBase: new URL(siteUrl()),
   title: {
     default: `${site.name} · ${site.tagline}`,
     template: `%s · ${site.name}`,
@@ -39,8 +40,8 @@ const jsonLd = {
   "@type": "BarOrPub",
   name: site.name,
   description: site.description,
-  url: site.url,
-  image: `${site.url}/images/og.jpg`,
+  url: siteUrl(),
+  image: `${siteUrl()}/images/og.jpg`,
   address: {
     "@type": "PostalAddress",
     streetAddress: site.address.street,
@@ -55,8 +56,8 @@ const jsonLd = {
     opens: n.open,
     closes: n.close,
   })),
-  sameAs: [site.instagram.url],
-  hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress())}`,
+  ...(site.instagram.handle ? { sameAs: [site.instagram.url] } : {}),
+  hasMap: `https://www.google.com/maps/search/?api=1&query=${mapsQuery()}`,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

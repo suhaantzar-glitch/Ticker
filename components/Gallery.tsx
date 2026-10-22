@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { site } from "@/content/site";
+import { site, instagramLabel } from "@/content/site";
 import SectionHeading from "./SectionHeading";
 import { InstagramIcon } from "./icons";
 
@@ -7,7 +7,7 @@ export default function Gallery() {
   return (
     <section id="gallery" tabIndex={-1} className="grain relative bg-walnut-950 py-24 outline-none sm:py-32">
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHeading eyebrow="Last Weekend" title="Gallery" intro="Proof you were there. Tag us to get featured." />
+        <SectionHeading eyebrow="Last Weekend" title="Gallery" intro={site.preview ? "Proof you were there. (Placeholder shots for now; real nights coming soon.)" : "Proof you were there. Tag us to get featured."} />
         <ul className="columns-2 gap-4 sm:gap-5 md:columns-3">
           {site.images.gallery.map((img, i) => (
             <li key={img.src} data-reveal className="mb-4 break-inside-avoid sm:mb-5">
@@ -39,7 +39,7 @@ export default function Gallery() {
             className="inline-flex items-center gap-3 rounded-md border-2 border-brass-400 bg-oxblood-700 px-7 py-3 font-display text-lg tracking-widest text-cream-50 shadow-[4px_4px_0_0_#000] transition-transform hover:-translate-y-0.5"
           >
             <InstagramIcon className="h-5 w-5" />
-            More on {site.instagram.handle}
+            More on {instagramLabel()}
           </a>
         </div>
       </div>

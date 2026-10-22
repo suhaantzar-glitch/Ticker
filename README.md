@@ -31,7 +31,9 @@ npm run dev        # http://localhost:3000
 
 ## Deploying to Vercel
 
-No config needed. Import the repo in Vercel (or run `npx vercel`) and every branch push gets a preview URL. Once you have a real domain, update `site.url` in `content/site.ts`; it drives the canonical/OG URLs, `robots.txt`, and `sitemap.xml`.
+No config needed. Import the repo in Vercel (or run `npx vercel`) and every branch push gets a preview URL. Link previews, `robots.txt` and `sitemap.xml` use the Vercel deployment URL automatically. For a custom domain, set the `NEXT_PUBLIC_SITE_URL` environment variable in Vercel.
+
+> **Heads-up:** Vercel protects *preview* deployments (branch URLs) behind a Vercel login by default. To share a link with someone outside your Vercel team, use the production deployment (the `main` branch), or turn off Deployment Protection under Project → Settings.
 
 ## Editing content
 
@@ -49,16 +51,33 @@ No config needed. Import the repo in Vercel (or run `npx vercel`) and every bran
 - **Accessibility:** a skip link, keyboard-reachable nav, visible focus rings, and `alt` text on every image. If the visitor sets `prefers-reduced-motion`, Lenis and all GSAP animations are switched off and content shows immediately. If JavaScript fails, a 4-second fallback un-hides content that was waiting to be revealed.
 - **SEO:** metadata, Open Graph image, `BarOrPub` JSON-LD with opening hours, `robots.txt`, and `sitemap.xml`.
 
-## Assumptions (please confirm)
+## Facts and sources
 
-1. **Address:** listings disagree between 9 and 11 Hodskin St. I used **11 Hodskin St, Canton, NY 13617**. The map pin and directions link search for "The Tick Tock Pub" plus the address, so Google should still find the right spot.
-2. **Hours:** confirmed as **Thursday–Saturday, 10pm–2am**.
-3. **Instagram:** `@theticktockpub` is a **placeholder handle**. Swap in the real one.
-4. **Cover:** "$5–$10, varies by night" is a placeholder.
-5. **Events and specials:** the three nights (Throwback Thursday, Friday Night Lights, Saturday Main Event) and their specials are made up. Edit them weekly.
-6. **ID policy, dress code, parking:** generic, sensible wording, not the bar's official policy.
-7. **Photos:** all images are generated on-brand placeholders labelled "PHOTO PLACEHOLDER" (see `scripts/generate-placeholders.mjs`). Replace them with real photos before launch.
-8. **Domain:** `site.url` is set to `https://ticktockpub.vercel.app` as a stand-in.
-9. **Map:** uses the keyless Google Maps embed (`output=embed`), so no API key or billing is needed.
-10. **Branding:** the collegiate look is generic and original. There are no St. Lawrence University or SUNY Canton names, logos, seals, or official colors.
-11. **Framework version:** the brief asked for Next.js 15+. I used the current stable release, 16.x, which has the same App Router APIs.
+This is a **concept preview** to show the owner. With `site.preview: true` in `content/site.ts`, the site labels sample events and photos as samples. Set it to `false` once real content is in.
+
+What's based on public sources:
+
+- **Address: 9–11 Hodskin St, Canton, NY 13617.** Local coverage of the 2024 sale describes the property as 9–11 Hodskin Street, which is why listings show both numbers. Map and directions links search for "Tick Tock, 11 Hodskin St".
+- **"The Ticker":** the students' nickname for the bar, used by St. Lawrence's student paper.
+- **Caricatures, murals and fireplaces:** reported as features the new ownership is keeping.
+- **Hours: Thursday–Saturday, 10pm–2am,** as provided for this build.
+- **Interior:** red booths, wood floors, front and back bars, and a dance floor with a DJ, as described in the brief.
+
+Sources:
+- [North Country Now: "New Tick Tock owner ready to revitalize historic Canton landmark"](https://northcountrynow.com/stories/new-tick-tock-owner-ready-to-revitalize-historic-canton-landmark,254578)
+- [NNY360 / Watertown Daily Times: "New Tick Tock owner wants to revitalize historic downtown spot in Canton"](https://www.nny360.com/communitynews/business/new-tick-tock-owner-wants-to-revitalize-historic-downtown-spot-in-canton/article_47238e6c-fb61-54cb-93f1-f566935178fc.html)
+- [The Hill News: "Farewell to Ticker"](https://thehillnews.org/opinions/noragraves/farewell-to-ticker-embracing-change-at-slu/)
+
+## Still to confirm with the owner
+
+Search `content/site.ts` for `[CONFIRM]`.
+
+1. **Name:** the site uses "The Tick Tock Pub". Public listings also say "Tick Tock Inn" or just "Tick Tock".
+2. **Instagram:** no official account found. While `instagram.handle` is `null`, the site just says "Instagram" and links to instagram.com.
+3. **Events and specials:** the three nights (Throwback Thursday, Friday Night Lights, Saturday Main Event) and their specials are samples.
+4. **Cover, dress code, parking:** neutral wording, not an official policy. No cover price is stated.
+5. **Photos:** all images are generated on-brand placeholders labelled "PHOTO PLACEHOLDER" (see `scripts/generate-placeholders.mjs`). The share image (`og.jpg`) shows the wordmark.
+6. **Domain:** on Vercel the deployment URL is picked up automatically (`lib/siteUrl.ts`). Set `NEXT_PUBLIC_SITE_URL` once there's a custom domain.
+7. **Map:** uses the keyless Google Maps embed, so no API key or billing is needed.
+8. **Branding:** the collegiate look is generic and original. There are no St. Lawrence University or SUNY Canton names, logos, seals, or official colors.
+9. **Framework version:** the brief asked for Next.js 15+. This uses the current stable release, 16.x.
