@@ -30,9 +30,9 @@ export default function Nav() {
       }`}
     >
       <nav aria-label="Main" className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
-        <a href="#top" className="flex items-center gap-2 font-display text-lg text-cream-50">
+        <a href="#top" className="flex items-center gap-2 whitespace-nowrap font-display text-base text-cream-50 sm:text-lg">
           <ClockMark />
-          <span>Tick Tock</span>
+          <span>{site.name}</span>
         </a>
 
         <ul className="hidden items-center gap-6 lg:flex">
@@ -49,7 +49,9 @@ export default function Nav() {
         </ul>
 
         <div className="flex items-center gap-3">
-          <OpenBadge className="hidden sm:inline-flex" />
+          <span className="hidden sm:block">
+            <OpenBadge />
+          </span>
           <a
             href={site.instagram.url}
             target="_blank"

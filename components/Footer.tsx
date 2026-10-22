@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
         <div className="grid gap-10 md:grid-cols-3">
           <div>
-            <p className="font-display text-3xl text-varsity">The Tick Tock</p>
+            <p className="font-display text-3xl text-varsity">{site.name}</p>
             <p className="mt-2 font-chalk text-lg text-brass-300">{site.tagline}</p>
           </div>
           <div className="space-y-2 text-cream-200">

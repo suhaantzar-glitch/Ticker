@@ -34,7 +34,6 @@ export type SiteImage = {
 
 export const site = {
   name: "The Tick Tock Pub",
-  shortName: "The Tick Tock",
   tagline: "Canton's late-night tradition",
   description:
     "The Tick Tock Pub is Canton, NY's late-night college bar and dance floor: red booths, two bars, a DJ, and the night everybody ends up at.",
@@ -43,11 +42,7 @@ export const site = {
   timezone: "America/New_York",
 
   address: {
-    // The property is 9–11 Hodskin St (per 2024 local news coverage of the sale);
-    // listings use 9 or 11 interchangeably.
-    street: "9–11 Hodskin St",
-    /** Single street number used for map searches and directions */
-    mapStreet: "11 Hodskin St",
+    street: "11 Hodskin St",
     city: "Canton",
     region: "NY",
     postalCode: "13617",
@@ -114,7 +109,7 @@ export const site = {
   space: {
     heading: "The Space",
     body: [
-      "Everybody calls it the Ticker. Oxblood leather booths worn soft by generations of Thursdays, warm wood floors, and the caricatures, murals and fireplaces that make it unmistakably the Tock.",
+      "Everybody calls it the Ticker. Oxblood leather booths worn soft by generations of Thursdays, warm wood floors, and the caricatures, murals and fireplaces that make it unmistakably the Tick Tock.",
       "Two bars, so the line is never as bad as it looks. Grab a booth up front, then follow the bass to the back, where the DJ runs the floor until last call.",
     ],
     features: [
@@ -169,9 +164,9 @@ export function fullAddress() {
   return `${a.street}, ${a.city}, ${a.region} ${a.postalCode}`;
 }
 
+/** Map searches use the street address alone so Google pins the right building. */
 export function mapsQuery() {
-  const a = site.address;
-  return encodeURIComponent(`Tick Tock, ${a.mapStreet}, ${a.city}, ${a.region} ${a.postalCode}`);
+  return encodeURIComponent(fullAddress());
 }
 
 /** How to refer to the Instagram account in copy: the handle if known, else "Instagram". */

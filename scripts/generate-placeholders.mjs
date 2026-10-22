@@ -14,7 +14,7 @@ const palettes = {
 };
 
 const images = [
-  ["hero", 2400, 1500, "red", "booths", "The Tick Tock · Interior"],
+  ["hero", 2400, 1500, "red", "booths", "The Tick Tock Pub · Interior"],
   ["space-booths", 1200, 1500, "red", "booths", "Red Booths"],
   ["space-front-bar", 1600, 1100, "wood", "bar", "Front Bar"],
   ["space-floor", 1600, 1100, "wood", "floor", "Wood Floors"],

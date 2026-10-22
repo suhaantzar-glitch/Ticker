@@ -17,7 +17,7 @@ export default function ThisWeek() {
         <SectionHeading
           eyebrow="On Tap"
           title="This Week"
-          intro="Three nights, one tradition. Here's what's going down at the Tock."
+          intro="Three nights, one tradition. Here's what's going down at the Tick Tock."
         />
         <ul data-reveal-stagger className="grid gap-10 md:grid-cols-3 md:gap-8">
           {site.thisWeek.map((ev) => (
