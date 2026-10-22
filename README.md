@@ -58,6 +58,7 @@ This is a **concept preview** to show the owner. With `site.preview: true` in `c
 What's based on public sources:
 
 - **Name and address: The Tick Tock Pub, 11 Hodskin St, Canton, NY 13617** (confirmed). The map and directions links search by street address only, so Google pins the building instead of another business listing.
+- **Instagram: [@theticktockpub](https://www.instagram.com/theticktockpub/).** The account's bio lists the same Thursday–Saturday, 10pm–2am hours.
 - **"The Ticker":** the students' nickname for the bar, used by St. Lawrence's student paper.
 - **Caricatures, murals and fireplaces:** reported as features the new ownership is keeping.
 - **Hours: Thursday–Saturday, 10pm–2am,** as provided for this build.
@@ -72,11 +73,10 @@ Sources:
 
 Search `content/site.ts` for `[CONFIRM]`.
 
-1. **Instagram:** no official account found. While `instagram.handle` is `null`, the site just says "Instagram" and links to instagram.com.
-2. **Events and specials:** the three nights (Throwback Thursday, Friday Night Lights, Saturday Main Event) and their specials are samples.
-3. **Cover, dress code, parking:** neutral wording, not an official policy. No cover price is stated.
-4. **Photos:** all images are generated on-brand placeholders labelled "PHOTO PLACEHOLDER" (see `scripts/generate-placeholders.mjs`). The share image (`og.jpg`) shows the wordmark.
-5. **Domain:** on Vercel the deployment URL is picked up automatically (`lib/siteUrl.ts`). Set `NEXT_PUBLIC_SITE_URL` once there's a custom domain.
-6. **Map:** uses the keyless Google Maps embed, so no API key or billing is needed.
-7. **Branding:** the collegiate look is generic and original. There are no St. Lawrence University or SUNY Canton names, logos, seals, or official colors.
-8. **Framework version:** the brief asked for Next.js 15+. This uses the current stable release, 16.x.
+1. **Events and specials:** the three nights (Throwback Thursday, Friday Night Lights, Saturday Main Event) and their specials are samples.
+2. **Cover, dress code, parking:** neutral wording, not an official policy. No cover price is stated.
+3. **Photos:** all images are generated on-brand placeholders labelled "PHOTO PLACEHOLDER" (see `scripts/generate-placeholders.mjs`). The share image (`og.jpg`) shows the wordmark.
+4. **Domain:** on Vercel the deployment URL is picked up automatically (`lib/siteUrl.ts`). Set `NEXT_PUBLIC_SITE_URL` once there's a custom domain.
+5. **Map:** uses the keyless Google Maps embed, so no API key or billing is needed.
+6. **Branding:** the collegiate look is generic and original. There are no St. Lawrence University or SUNY Canton names, logos, seals, or official colors.
+7. **Framework version:** the brief asked for Next.js 15+. This uses the current stable release, 16.x.

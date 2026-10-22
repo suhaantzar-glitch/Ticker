@@ -50,10 +50,10 @@ export const site = {
   },
 
   instagram: {
-    // [CONFIRM] No official account found yet. Set e.g. "@handle" and the
-    // profile URL; while handle is null the site just says "Instagram".
-    handle: null as string | null,
-    url: "https://www.instagram.com/",
+    // Account bio lists "Thursday, Friday, Saturday 10pm-2am". Set handle to
+    // null to fall back to a plain "Instagram" label.
+    handle: "@theticktockpub" as string | null,
+    url: "https://www.instagram.com/theticktockpub/",
   },
 
   /**
