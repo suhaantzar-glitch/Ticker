@@ -1,5 +1,6 @@
 import { site, fullAddress, instagramLabel } from "@/content/site";
 import { InstagramIcon } from "./icons";
+import InstagramLink from "./InstagramLink";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -18,15 +19,12 @@ export default function Footer() {
           </div>
           <div className="space-y-3">
             <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-cream-300">Follow</h2>
-            <a
-              href={site.instagram.url}
-              target="_blank"
-              rel="noopener noreferrer"
+            <InstagramLink
               className="inline-flex items-center gap-2 text-lg text-cream-50 transition-colors hover:text-brass-300"
             >
               <InstagramIcon className="h-5 w-5" />
               {instagramLabel()}
-            </a>
+            </InstagramLink>
           </div>
         </div>
         <div aria-hidden className="brass-rule my-10" />

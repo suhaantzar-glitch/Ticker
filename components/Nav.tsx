@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { site, instagramLabel } from "@/content/site";
 import { InstagramIcon } from "./icons";
+import InstagramLink from "./InstagramLink";
 import OpenBadge from "./OpenBadge";
 
 export default function Nav() {
@@ -52,15 +53,12 @@ export default function Nav() {
           <span className="hidden sm:block">
             <OpenBadge />
           </span>
-          <a
-            href={site.instagram.url}
-            target="_blank"
-            rel="noopener noreferrer"
+          <InstagramLink
             aria-label={`Follow on ${instagramLabel()}`}
             className="hidden rounded-full p-2 text-cream-100 transition-colors hover:text-brass-300 sm:block"
           >
             <InstagramIcon className="h-5 w-5" />
-          </a>
+          </InstagramLink>
           <button
             type="button"
             className="rounded p-2 text-cream-50 lg:hidden"
@@ -91,9 +89,7 @@ export default function Nav() {
           ))}
           <li className="mt-2 flex items-center justify-between border-t border-cream-50/10 pt-4">
             <OpenBadge />
-            <a href={site.instagram.url} target="_blank" rel="noopener noreferrer" className="text-brass-300">
-              {instagramLabel()}
-            </a>
+            <InstagramLink className="text-brass-300">{instagramLabel()}</InstagramLink>
           </li>
         </ul>
       </div>

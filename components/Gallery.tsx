@@ -2,6 +2,7 @@ import Image from "next/image";
 import { site, instagramLabel } from "@/content/site";
 import SectionHeading from "./SectionHeading";
 import { InstagramIcon } from "./icons";
+import InstagramLink from "./InstagramLink";
 
 export default function Gallery() {
   return (
@@ -32,15 +33,12 @@ export default function Gallery() {
           ))}
         </ul>
         <div data-reveal className="mt-12 flex justify-center">
-          <a
-            href={site.instagram.url}
-            target="_blank"
-            rel="noopener noreferrer"
+          <InstagramLink
             className="inline-flex items-center gap-3 rounded-md border-2 border-brass-400 bg-oxblood-700 px-7 py-3 font-display text-lg tracking-widest text-cream-50 shadow-[4px_4px_0_0_#000] transition-transform hover:-translate-y-0.5"
           >
             <InstagramIcon className="h-5 w-5" />
             More on {instagramLabel()}
-          </a>
+          </InstagramLink>
         </div>
       </div>
     </section>

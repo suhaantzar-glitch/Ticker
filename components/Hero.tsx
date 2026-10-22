@@ -8,6 +8,7 @@ import { site } from "@/content/site";
 import Countdown from "./Countdown";
 import AnalogClock from "./AnalogClock";
 import { InstagramIcon } from "./icons";
+import InstagramLink from "./InstagramLink";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -97,15 +98,12 @@ export default function Hero() {
             >
               This Week
             </a>
-            <a
-              href={site.instagram.url}
-              target="_blank"
-              rel="noopener noreferrer"
+            <InstagramLink
               className="inline-flex w-full items-center justify-center gap-2 rounded-md border-2 border-cream-100/60 px-7 py-3 font-display text-lg tracking-widest text-cream-50 transition-colors hover:border-brass-300 hover:text-brass-300 sm:w-auto"
             >
               <InstagramIcon className="h-5 w-5" />
               Follow on Instagram
-            </a>
+            </InstagramLink>
           </div>
         </div>
 

@@ -1,6 +1,7 @@
 import { site, DAY_NAMES, instagramLabel, type WeekEvent } from "@/content/site";
 import SectionHeading from "./SectionHeading";
 import TonightBadge from "./TonightBadge";
+import InstagramLink from "./InstagramLink";
 
 function doorsFor(day: number) {
   const night = site.openNights.find((n) => n.day === day);
@@ -29,9 +30,9 @@ export default function ThisWeek() {
         <p data-reveal className="mt-12 text-center text-sm text-cream-300">
           {site.preview ? "Sample nights and specials shown. " : "Lineups and specials change. "}
           Check{" "}
-          <a href={site.instagram.url} target="_blank" rel="noopener noreferrer" className="font-semibold text-brass-300 underline-offset-4 hover:underline">
+          <InstagramLink className="font-semibold text-brass-300 underline-offset-4 hover:underline">
             {instagramLabel()}
-          </a>{" "}
+          </InstagramLink>{" "}
           for night-of updates.
         </p>
       </div>
