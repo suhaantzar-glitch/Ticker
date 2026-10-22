@@ -58,7 +58,7 @@ This is a **concept preview** to show the owner. With `site.preview: true` in `c
 What's based on public sources:
 
 - **Name and address: The Tick Tock Pub, 11 Hodskin St, Canton, NY 13617** (confirmed). The map and directions links search by street address only, so Google pins the building instead of another business listing.
-- **Instagram: [@theticktockpub](https://www.instagram.com/theticktockpub/).** The account's bio lists the same Thursday–Saturday, 10pm–2am hours.
+- **Instagram: [@theticktockpub](https://www.instagram.com/theticktockpub/)** (confirmed).
 - **"The Ticker":** the students' nickname for the bar, used by St. Lawrence's student paper.
 - **Caricatures, murals and fireplaces:** reported as features the new ownership is keeping.
 - **Hours: Thursday–Saturday, 10pm–2am,** as provided for this build.
