@@ -54,7 +54,7 @@ export const site = {
     url: "https://www.instagram.com/theticktockpub/", // [CONFIRM]
   },
 
-  /** [CONFIRM] Thursday–Saturday, doors ~10pm, last call per NY law */
+  /** Thursday–Saturday, 10pm–2am */
   openNights: [
     { day: 4, open: "22:00", close: "02:00" },
     { day: 5, open: "22:00", close: "02:00" },
@@ -90,7 +90,7 @@ export const site = {
   ] satisfies WeekEvent[] as WeekEvent[],
 
   knowBeforeYouGo: {
-    hours: "Thu – Sat · 10pm – 2am", // [CONFIRM]
+    hours: "Thu – Sat · 10pm – 2am",
     cover: "Cover varies by night, typically $5 – $10. Cash and card at the door.", // [CONFIRM]
     id: "21+ only. A valid, unexpired government-issued photo ID is required every night. No exceptions, no photocopies.",
     dress: "Come as you are. Jerseys encouraged on Fridays.",

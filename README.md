@@ -52,7 +52,7 @@ No config needed. Import the repo in Vercel (or run `npx vercel`) and every bran
 ## Assumptions (please confirm)
 
 1. **Address:** listings disagree between 9 and 11 Hodskin St. I used **11 Hodskin St, Canton, NY 13617**. The map pin and directions link search for "The Tick Tock Pub" plus the address, so Google should still find the right spot.
-2. **Hours:** you said "Thursday–Saturday, roughly 10–11p". I read that as **doors at 10pm, Thu–Sat, closing at 2am**. The 2am close is a guess, so set the real close time.
+2. **Hours:** confirmed as **Thursday–Saturday, 10pm–2am**.
 3. **Instagram:** `@theticktockpub` is a **placeholder handle**. Swap in the real one.
 4. **Cover:** "$5–$10, varies by night" is a placeholder.
 5. **Events and specials:** the three nights (Throwback Thursday, Friday Night Lights, Saturday Main Event) and their specials are made up. Edit them weekly.
