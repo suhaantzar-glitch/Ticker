@@ -33,7 +33,7 @@ export default function KnowBeforeYouGo() {
             ))}
           </dl>
           <p data-reveal className="mt-10 rounded bg-oxblood-700 px-4 py-3 text-center text-sm font-bold uppercase tracking-widest text-cream-50">
-            21+ · Valid photo ID required every night · No exceptions
+            18+ to enter · 21+ to drink · Valid photo ID every night
           </p>
         </div>
       </div>

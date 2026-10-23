@@ -1,4 +1,4 @@
-const ITEMS = ["Thu · Fri · Sat", "Doors 10pm", "21+ with valid ID", "Two bars", "One dance floor", "Canton, NY", "Drink responsibly"];
+const ITEMS = ["Thu · Fri · Sat", "Doors 10pm", "18+ to enter", "Two bars", "One dance floor", "Canton, NY", "Drink responsibly"];
 
 /** Scrolling felt ribbon between sections. Purely decorative. */
 export default function Marquee() {

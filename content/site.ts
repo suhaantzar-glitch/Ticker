@@ -100,8 +100,9 @@ export const site = {
 
   knowBeforeYouGo: {
     hours: "Thu – Sat · 10pm – 2am",
-    cover: "Cover varies by night. Check Instagram for the night's details.", // [CONFIRM]
-    id: "21+ only. A valid, unexpired government-issued photo ID is required every night. No exceptions, no photocopies.",
+    // [CONFIRM] exact 21+ cover amount
+    cover: "$10 cover for ages 18–20. Reduced cover for 21+.",
+    id: "18+ to enter, 21+ to drink. A valid, unexpired government-issued photo ID is required every night. No exceptions, no photocopies.",
     dress: "Come as you are.", // [CONFIRM]
     parking:
       "Downtown street parking nearby. Better yet: walk, carpool with a sober driver, or grab a ride home.", // [CONFIRM]
@@ -154,7 +155,7 @@ export const site = {
   ],
 
   legal: {
-    responsibly: "Drink responsibly. 21+ with valid ID. Never drink and drive.",
+    responsibly: "18+ to enter, 21+ to drink. Drink responsibly. Never drink and drive.",
   },
 } as const;
 

@@ -74,9 +74,10 @@ Sources:
 Search `content/site.ts` for `[CONFIRM]`.
 
 1. **Events and specials:** the three nights (Throwback Thursday, Friday Night Lights, Saturday Main Event) and their specials are samples.
-2. **Cover, dress code, parking:** neutral wording, not an official policy. No cover price is stated.
-3. **Photos:** all images are generated on-brand placeholders labelled "PHOTO PLACEHOLDER" (see `scripts/generate-placeholders.mjs`). The share image (`og.jpg`) shows the wordmark.
-4. **Domain:** on Vercel the deployment URL is picked up automatically (`lib/siteUrl.ts`). Set `NEXT_PUBLIC_SITE_URL` once there's a custom domain.
-5. **Map:** uses the keyless Google Maps embed, so no API key or billing is needed.
-6. **Branding:** the collegiate look is generic and original. There are no St. Lawrence University or SUNY Canton names, logos, seals, or official colors.
-7. **Framework version:** the brief asked for Next.js 15+. This uses the current stable release, 16.x.
+2. **Cover:** $10 for ages 18–20 and a lower cover for 21+ (exact 21+ amount still needed).
+3. **Dress code, parking:** neutral wording, not an official policy.
+4. **Photos:** all images are generated on-brand placeholders labelled "PHOTO PLACEHOLDER" (see `scripts/generate-placeholders.mjs`). The share image (`og.jpg`) shows the wordmark.
+5. **Domain:** on Vercel the deployment URL is picked up automatically (`lib/siteUrl.ts`). Set `NEXT_PUBLIC_SITE_URL` once there's a custom domain.
+6. **Map:** uses the keyless Google Maps embed, so no API key or billing is needed.
+7. **Branding:** the collegiate look is generic and original. There are no St. Lawrence University or SUNY Canton names, logos, seals, or official colors.
+8. **Framework version:** the brief asked for Next.js 15+. This uses the current stable release, 16.x.
